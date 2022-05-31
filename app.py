@@ -14,9 +14,3 @@ def call():
     getsongs = GetSongs(name)
     result = getsongs.getRecom()
     return jsonify({'result':result})
-
-
-if __name__ == "__main__":
-    app.run()
-
-
