@@ -20,12 +20,12 @@ vsm1array = np.array(vsm1)
 print(vsm1array.nbytes/1000000000)
 
 #####################################
-datascaled = data[columns][5000:10000]
-datascaledarr = np.array(datascaled)
+# datascaled = data[columns][5000:10000]
+# datascaledarr = np.array(datascaled)
 
-vsm2 = cosine_similarity(datascaledarr,datascaledarr)
-vsm2array = np.array(vsm2)
-print(vsm2array.nbytes/1000000000)
+# vsm2 = cosine_similarity(datascaledarr,datascaledarr)
+# vsm2array = np.array(vsm2)
+# print(vsm2array.nbytes/1000000000)
 
 ######################################
 # datascaled = data[columns][10000:12000]
@@ -38,4 +38,4 @@ print(vsm2array.nbytes/1000000000)
 ######################################
 
 data2 = data[:30000]
-cs_matrix = np.vstack((vsm1array,vsm2array))
+cs_matrix = np.vstack((vsm1array))
