@@ -12,12 +12,12 @@ for i in columns:
   data[i] = scaler.fit_transform(np.array(data[i]).reshape(-1,1))
 
 ####################################
-datascaled = data[columns][:5000]
+datascaled = data[columns][:50]
 datascaledarr = np.array(datascaled)
 
 vsm1 = cosine_similarity(datascaledarr,datascaledarr)
 vsm1array = np.array(vsm1)
-print(vsm1array.nbytes/1000000000)
+print(vsm1array.nbytes/1000000000,"GB")
 
 #####################################
 # datascaled = data[columns][5000:10000]
