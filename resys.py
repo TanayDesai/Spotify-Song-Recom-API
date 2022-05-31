@@ -8,7 +8,6 @@ class GetSongs:
         self.songdata = data2[data2.name==self.name]
         print(self.songdata)
         self.songdataidx = data2[data2.name==self.name].index[0]
-        self.songdatascaled = datascaledarr[self.songdataidx]
         self.allsongs = []
 
 
