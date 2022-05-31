@@ -12,7 +12,7 @@ for i in columns:
   data[i] = scaler.fit_transform(np.array(data[i]).reshape(-1,1))
 
 ####################################
-datascaled = data[columns][:10000]
+datascaled = data[columns][:5000]
 datascaledarr = np.array(datascaled)
 
 vsm1 = cosine_similarity(datascaledarr,datascaledarr)
@@ -20,7 +20,7 @@ vsm1array = np.array(vsm1)
 print(vsm1array.nbytes/1000000000)
 
 #####################################
-datascaled = data[columns][10000:20000]
+datascaled = data[columns][5000:10000]
 datascaledarr = np.array(datascaled)
 
 vsm2 = cosine_similarity(datascaledarr,datascaledarr)
@@ -28,7 +28,7 @@ vsm2array = np.array(vsm2)
 print(vsm2array.nbytes/1000000000)
 
 ######################################
-datascaled = data[columns][20000:30000]
+datascaled = data[columns][10000:15000]
 datascaledarr = np.array(datascaled)
 
 vsm3 = cosine_similarity(datascaledarr,datascaledarr)
