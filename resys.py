@@ -26,6 +26,6 @@ class GetSongs:
         return self.allsongs
 
 
-test = GetSongs("bLINDING lIgHTS")
-result = test.getRecom()
-print(result)
+# test = GetSongs("bLINDING lIgHTS")
+# result = test.getRecom()
+# print(result)
