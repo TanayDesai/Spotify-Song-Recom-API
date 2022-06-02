@@ -15,7 +15,7 @@ def call():
     try:
         getsongs = GetSongs(name)
         result = getsongs.getRecom()
-    except exception as e:
-        result = str(e)
-        
+    except:
+        result = "Error, try again"
+
     return jsonify({'result':result})
