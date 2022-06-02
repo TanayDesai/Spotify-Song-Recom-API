@@ -37,5 +37,5 @@ print(vsm1array.nbytes/1000000000,"GB")
 
 ######################################
 
-data2 = data[:30000]
+data2 = data
 cs_matrix = np.vstack((vsm1array))

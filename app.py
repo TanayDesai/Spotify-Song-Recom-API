@@ -12,11 +12,16 @@ def home():
 @app.route("/song",methods=['GET'])
 def call():
     name = str(request.args["name"])
+
     try:
         getsongs = GetSongs(name)
         result = getsongs.getRecom()
-        return jsonify({'result':result})
-    except IndexError as e:
-        result = e
+    except Exception as e:
+        result = f"{e}"
+    finally:
         return jsonify({'result':result})
 
+
+
+# if __name__ == "__main__":
+#     app.run()

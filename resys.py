@@ -9,7 +9,7 @@ class GetSongs:
         self.songdataidx = datanames[datanames==self.name.lower()].index[0]
         self.songdata = data2.iloc[self.songdataidx]
         print(self.songdata)
-        self.allsongs = []
+        self.allsongs = {"Artist":[],"Song":[],"Details":[]}
 
 
     def getRecom(self):
@@ -17,15 +17,15 @@ class GetSongs:
         cs_data.sort(key=lambda x:x[1],reverse=True)
     
         num = 1
-        for i in cs_data[0:25]:
-            namesong = data2["name"][i[0]] 
-            artist = data2["artist"][i[0]]
-            self.allsongs.append(f"{num} {namesong} by {artist}")
+        for i in cs_data[0:25]:  
+            self.allsongs["Song"].append(data2["name"][i[0]])
+            self.allsongs["Artist"].append(data2["artist"][i[0]])
             num +=1
+        self.allsongs["Details"].append(data2.iloc[cs_data[0][0]].to_dict())
 
         return self.allsongs
 
-
-# test = GetSongs("bLINDING lIgHTS")
+# Testing
+# test = GetSongs("traitor")
 # result = test.getRecom()
 # print(result)
