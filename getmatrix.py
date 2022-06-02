@@ -12,7 +12,7 @@ for i in columns:
   data[i] = scaler.fit_transform(np.array(data[i]).reshape(-1,1))
 
 ####################################
-datascaled = data[columns][:4000]
+datascaled = data[columns][:2500]
 datascaledarr = np.array(datascaled)
 
 vsm1 = cosine_similarity(datascaledarr,datascaledarr)
