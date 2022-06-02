@@ -1,3 +1,4 @@
+from logging import exception
 from flask import Flask,request,jsonify
 from resys import GetSongs
 
@@ -11,6 +12,10 @@ def home():
 @app.route("/song",methods=['GET'])
 def call():
     name = str(request.args["name"])
-    getsongs = GetSongs(name)
-    result = getsongs.getRecom()
+    try:
+        getsongs = GetSongs(name)
+        result = getsongs.getRecom()
+    except exception as e:
+        result = str(e)
+        
     return jsonify({'result':result})

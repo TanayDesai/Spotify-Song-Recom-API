@@ -1,13 +1,14 @@
 from getmatrix import cs_matrix
 from getmatrix import data2
 
+datanames = data2['name'].apply(lambda x: x.lower())
 
 class GetSongs:
     def __init__(self,name):
         self.name = str(name) 
-        self.songdata = data2[data2.name==self.name]
+        self.songdataidx = datanames[datanames==self.name.lower()].index[0]
+        self.songdata = data2.iloc[self.songdataidx]
         print(self.songdata)
-        self.songdataidx = data2[data2.name==self.name].index[0]
         self.allsongs = []
 
 
@@ -23,3 +24,8 @@ class GetSongs:
             num +=1
 
         return self.allsongs
+
+
+test = GetSongs("bLINDING lIgHTS")
+result = test.getRecom()
+print(result)
