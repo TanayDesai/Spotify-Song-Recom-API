@@ -17,7 +17,7 @@ def call():
         getsongs = GetSongs(name)
         result = getsongs.getRecom()
     except Exception as e:
-        result = f"{e}"
+        result = f"ERROR: {e}"
     finally:
         return jsonify({'result':result})
 

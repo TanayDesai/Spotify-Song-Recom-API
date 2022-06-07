@@ -37,5 +37,5 @@ print(vsm1array.nbytes/1000000000,"GB")
 
 ######################################
 
-data2 = data
+data2 =  pd.read_csv("Spotify-Songs-Data.csv")
 cs_matrix = np.vstack((vsm1array))
